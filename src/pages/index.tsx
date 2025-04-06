@@ -4,7 +4,7 @@ import SearchForm from '../components/SearchForm';
 import SearchResults from '../components/SearchResults';
 import LoadingIcon from '../components/LoadingIcon';
 import { useSearch } from '../hooks/useSearch';
-import { GitHubRepository } from '../components/GitHubRepository';
+import GitHubRepository, { GitHubRepositoryProps } from "@/components/GitHubRepository";
 
 const Home: NextPage = () => {
   const {
@@ -27,8 +27,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          GitHub リポジトリ検索
+        <h1 className="text-6xl font-bold ">
+          GitHub Repository Search
         </h1>
 
         <div className="mt-6">

@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { GitHubRepository } from './components/GitHubRepository';
+import GitHubRepository, { GitHubRepositoryProps } from "../components/GitHubRepository";
 
 interface SearchResult {
   items: GitHubRepository[];

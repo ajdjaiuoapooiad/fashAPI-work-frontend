@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface GitHubRepositoryProps {
+export interface GitHubRepositoryProps {
   name: string;
   description: string | null;
   html_url: string;

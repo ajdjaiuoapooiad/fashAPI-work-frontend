@@ -1,6 +1,5 @@
 import React from 'react';
-import { GitHubRepositoryProps } from './GitHubRepository';
-import GitHubRepository from './GitHubRepository';
+import GitHubRepository, { GitHubRepositoryProps } from "./GitHubRepository";
 
 interface SearchResultsProps {
   repositories: GitHubRepositoryProps[];
