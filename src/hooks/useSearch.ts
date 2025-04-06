@@ -23,7 +23,7 @@ export const useSearch = () => {
     setResults(null);
 
     try {
-      const response = await fetch(`/api/search?keyword=${keyword}&username=${username}`); // バックエンドの API エンドポイント
+      const response = await fetch(`http://127.0.0.1:8000/api/search?keyword=${keyword}&username=${username}`); // バックエンドの API エンドポイント
       if (!response.ok) {
         const errorData = await response.json();
         setError(errorData.message || `HTTP error! status: ${response.status}`);
