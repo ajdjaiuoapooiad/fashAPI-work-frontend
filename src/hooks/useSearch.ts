@@ -2,14 +2,14 @@ import { useState, useCallback } from 'react';
 import GitHubRepository, { GitHubRepositoryProps } from "../components/GitHubRepository";
 
 interface SearchResult {
-  items: GitHubRepository[];
+  items: GitHubRepositoryProps[]; // GitHubRepositoryProps の配列にする
   total_count?: number;
 }
 
 export const useSearch = () => {
   const [keyword, setKeyword] = useState('');
   const [username, setUsername] = useState('');
-  const [results, setResults] = useState<GitHubRepository[] | null>(null);
+  const [results, setResults] = useState<GitHubRepositoryProps[] | null>(null); // results の型も GitHubRepositoryProps[] に変更
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   // （追加機能で実装する場合）
@@ -43,23 +43,23 @@ export const useSearch = () => {
 
   // （追加機能で実装する場合）
   // const goToPage = useCallback(async (page: number) => {
-  //   setLoading(true);
-  //   setError(null);
-  //   setCurrentPage(page);
-  //   try {
-  //     const response = await fetch(`/api/search?keyword=${keyword}&username=${username}&page=${page}`);
-  //     if (!response.ok) {
-  //       const errorData = await response.json();
-  //       setError(errorData.message || `HTTP error! status: ${response.status}`);
-  //       return;
-  //     }
-  //     const data: SearchResult = await response.json();
-  //     setResults(data.items);
-  //   } catch (e: any) {
-  //     setError(e.message || 'ページ移動中にエラーが発生しました');
-  //   } finally {
-  //     setLoading(false);
-  //   }
+  //   setLoading(true);
+  //   setError(null);
+  //   setCurrentPage(page);
+  //   try {
+  //     const response = await fetch(`/api/search?keyword=${keyword}&username=${username}&page=${page}`);
+  //     if (!response.ok) {
+  //       const errorData = await response.json();
+  //       setError(errorData.message || `HTTP error! status: ${response.status}`);
+  //       return;
+  //     }
+  //     const data: SearchResult = await response.json();
+  //     setResults(data.items);
+  //   } catch (e: any) {
+  //     setError(e.message || 'ページ移動中にエラーが発生しました');
+  //   } finally {
+  //     setLoading(false);
+  //   }
   // }, [keyword, username]);
 
   return {
