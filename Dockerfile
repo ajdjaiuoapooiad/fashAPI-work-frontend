@@ -13,6 +13,5 @@ COPY package*.json ./
 RUN npm install --production # 本番環境に必要な依存関係のみインストール
 COPY --from=builder /app/.next ./next
 COPY --from=builder /app/public ./public
-COPY server.js ./ 
 
 CMD ["npm", "start"]
