@@ -29,7 +29,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form onSubmit={handleSubmit} className="flex items-center gap-4">
       <div className="flex flex-col">
         <label htmlFor="keyword" className="block text-gray-700 text-sm font-bold mb-2">
           キーワード:
@@ -56,7 +56,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
           placeholder="例: facebook"
         />
       </div>
-      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      <button type="submit" className="mt-7 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         検索
       </button>
     </form>
